@@ -221,7 +221,6 @@ def LOGIN():
 		xbmcaddon.Addon(id='plugin.video.hbogohu').openSettings("Accunt")
 		xbmc.executebuiltin("Action(Back)")
 	else:
-		xbmc.executebuiltin('Notification(%s, %s, %d, %s)'%(username,'Popcorn time!', 4000, md+'DefaultUser.png'))
 		goToken = jsonrspl['Token']
 		GOcustomerId = jsonrspl['Customer']['Id']
 
@@ -415,6 +414,7 @@ def PLAY(url):
 	dt_custom_data = base64.b64encode("{\"userId\":\"" + GOcustomerId + "\",\"sessionId\":\"" + PlayerSessionId + "\",\"merchant\":\"hboeurope\"}")
 	
 	# Play the video
+	xbmc.executebuiltin('Notification(%s, %s, %d, %s)'%(username,'Popcorn time!', 4000, md+'DefaultUser.png'))
 	is_helper = inputstreamhelper.Helper('ism', drm='com.widevine.alpha')
 	if is_helper.check_inputstream():
 		li = xbmcgui.ListItem(iconImage=thumbnail, thumbnailImage=thumbnail, path=MediaUrl)
