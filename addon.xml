@@ -19,8 +19,10 @@
   	<platform>all</platform>
     <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
   	<forum>https://prohardver.hu/tema/kodi_xbmc_kiegeszito_magyar_nyelvu_online_filmekhe/friss.html</forum>
-    <website>https://github.com/billsuxx/plugin.video.hbogohu</website>
-    <news>Felujitas: @dancso97 18.11.10</news>
+    <website>https://github.com/Dancso97/HBOGo</website>
+    <news>Kisebb módosítások @dancso97 18.11.10, eredetileg : https://github.com/billsuxx/plugin.video.hbogohu </news>
+    <news>Felesleges Notifications eltavolitva.</news>
+    <news>Lejatszasi listad menupont hozzaadva.</news>
     <assets>
      <icon>resources/icon.png</icon>
      <fanart>resources/fanart.jpg</fanart>
