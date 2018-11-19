@@ -231,6 +231,7 @@ def LOGIN():
 
 def CATEGORIES():
 	global FavoritesGroupId
+	
 	addDir('Kereses...','search','',4,md+'DefaultAddonsSearch.png')
 
 	if (FavoritesGroupId == ""):
@@ -278,9 +279,9 @@ def LIST(url):
 		for titles in range(0, len(jsonrsp['Container'][0]['Contents']['Items'])):
 			if jsonrsp['Container'][0]['Contents']['Items'][titles]['ContentType'] == 1: #1=MOVIE/EXTRAS, 2=SERIES(serial), 3=SERIES(episode)
 				#If it's a movie
+				plot = jsonrsp['Container'][0]['Contents']['Items'][titles]['Abstract'].encode('utf-8', 'ignore')
 				if 'AvailabilityTo' in jsonrsp['Container'][0]['Contents']['Items'][titles]:
 					if jsonrsp['Container'][0]['Contents']['Items'][titles]['AvailabilityTo'] is not None:
-						#plot = jsonrsp['Container'][0]['Contents']['Items'][titles]['Abstract'].encode('utf-8', 'ignore')
 						plot = plot + ' A film megtekinthető: ' + jsonrsp['Container'][0]['Contents']['Items'][titles]['AvailabilityTo'].encode('utf-8', 'ignore')
 				addLink(jsonrsp['Container'][0]['Contents']['Items'][titles]['ObjectUrl'],plot,jsonrsp['Container'][0]['Contents']['Items'][titles]['AgeRating'],jsonrsp['Container'][0]['Contents']['Items'][titles]['ImdbRate'],jsonrsp['Container'][0]['Contents']['Items'][titles]['BackgroundUrl'],[jsonrsp['Container'][0]['Contents']['Items'][titles]['Cast'].split(', ')][0],jsonrsp['Container'][0]['Contents']['Items'][titles]['Director'],jsonrsp['Container'][0]['Contents']['Items'][titles]['Writer'],jsonrsp['Container'][0]['Contents']['Items'][titles]['Duration'],jsonrsp['Container'][0]['Contents']['Items'][titles]['Genre'],jsonrsp['Container'][0]['Contents']['Items'][titles]['Name'].encode('utf-8', 'ignore'),jsonrsp['Container'][0]['Contents']['Items'][titles]['OriginalName'],jsonrsp['Container'][0]['Contents']['Items'][titles]['ProductionYear'],5)
 				
